@@ -2195,13 +2195,11 @@ irods::error wosCheckParams(irods::plugin_context& _ctx ) {
                      if((result = ASSERT_PASS(get_ret, "wosRedirectOpen - register_archive_object failed")).ok()) {
                          // =-=-=-=-=-=-=-
                          // vote higher if we are on the same host
-                         if( _curr_host == host_name ) {
-                             _out_vote = 1.0;
-                         } //else {
-                         //    _out_vote = 0.5;
-                         //}
+                         _out_vote = 1.0;
                      }
                  
+                 } else {
+                     _out_vote = 0.5;
                  }
               }
            }
